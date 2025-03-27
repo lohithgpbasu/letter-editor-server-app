@@ -24,12 +24,12 @@ router.get('/google/callback', passport.authenticate('google', { session: false 
       process.env.JWT_SECRET,
       { expiresIn: '1h' }
     );
-    res.redirect(`http://localhost:3000/?token=${token}`);
+    res.redirect(`https://letter-editor-client-nu.vercel.app/?token=${token}`);
   }
 );
 
 router.get('/logout', (req, res) => {
-  res.redirect('http://localhost:3000');
+  res.redirect('https://letter-editor-client-nu.vercel.app');
 });
 
 module.exports = router;
